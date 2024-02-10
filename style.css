@@ -1,26 +1,27 @@
 body{
     font-family: 'Montserrat', sans-serif;
+    background-color: #e9edf1;
 }
 
 header {
     /* background-color: #BBBBBB; */
-    padding: 15px 0;
+    padding: 20px 0;
 }
 
 .caja {
-    width: 57.3%;
+    width: 59.5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    margin-left: 20px;
+    margin-left: 40px;
     width: 25px;
 }
 
 .titulo {
-    font-size: 22px;
+    font-size: 30px;
     font-weight: bold;
     color: #0A3871;
 }
@@ -28,18 +29,60 @@ header {
 .principal {
     height: 80vh;
     display: flex;
-    justify-content: space-between;
-    padding: 20px 20px 20px 55px;
+    justify-content: end;
+    gap: 50px;
+    padding: 20px 45px 20px 0;
 }
 
 .mensaje-usuario {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;   
 }
 
+#mensajeIngresado {
+    resize: none;
+    height: 295px;
+    width: 560px;
+    font-size: 20px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#mensajeIngresado::placeholder {
+    font-size: 20px;
+    color: #072B61;
+}
+
+.caja2 {
+    width: 600px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.mensaje-letras {
+    display: flex;
+}
+
+.mensaje-letras p {
+    font-size: 13px;
+    font-weight: bold;
+    color: #a1a1a1;
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+}
+
+#exclamacion {
+    width: 20px;
+    height: 20px;
+}
+
 .botones {
+    margin-top: 18px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -73,8 +116,24 @@ header {
 }
 
 .mensaje-encriptado {
-    width: 410px;
-    height: 450px;
-    border: 1px solid #000;
+    background-color: #fff;
+    width: 380px;
     border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.mensaje-encriptado img {
+    margin-top: 30px;
+}
+
+.mensaje-encriptado h2 {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.mensaje-encriptado p {
+    margin-top: 30px;
 }

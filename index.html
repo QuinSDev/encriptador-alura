@@ -16,21 +16,31 @@
 <body>
     <header>
         <div class="caja">
-            <img class="logo" src="img/alura.svg" alt="">
+            <img class="logo" src="img/alura.svg" alt="Logo de alura latam">
             <h1 class="titulo">Encriptador Alura</h1>
         </div>
     </header>
     <main>
         <section class="principal">
             <div class="mensaje-usuario">
-                <textarea name="" id="" cols="100" rows="22"></textarea>
-                <div class="botones">
-                    <button id="boton1" class="boton">Encriptar</button>
-                    <button id="boton2" class="boton">Desencriptar</button>
+                <textarea name="" id="mensajeIngresado" cols="" rows="" placeholder="Ingresa el texto aquí"></textarea>
+                <div class="caja2">
+                    <div class="mensaje-letras">
+                        <img id="exclamacion" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACN0lEQVR4nO1ZwW7aQBC12kjtqWlvbb+jzZUrN2LeWwnBgb+gyYlDDMdC8hk0ReqnNP0B2kNFVcixJBccTeooiBLF9s4uRvWTRkLGu/ve7Ox6djYISpQoYY1ut/vEGHNgjDkieQ7gAsAlgOvELpNnn+QdeVfaBNtGGIZvAEQAfpCMsxiA79JW+vBOvNlsviJ5CmCRlfgGIQvpq1arvfRCHkCd5C9b4huETKVvZ8SNMU/FU9rE+a+QoYylSr7dbj8HMHZNnvcixjKmCnnxhuwevsjzXsSXSqWyZy3AR9jwYREDjQUbb9GWxpgwF3ljzD7Jn3kHX4fFLExl287j/TMb72kJ4F87zer91wD+FEUAgEWj0XibxfuRbfwqz0AsnFKRlyRL8pSiCSA5SZUASqaoMJgLATGAd48KIHlcVAEkO2kEnBdYwCiNgG9FFQDg4lEBAOYFFvA7jYDrogogefVfCJjvdAhx1xcxlbZRRzby9iFzZB1vqYQLQ5pUQiuZc2CT1NU8jXS63+/Hs9ns1nq9nob3T1KR1zrQCPE7yG+vBxqNaoSygGGQFa1W64XNoV7C5i6EoiiyIT/NXTdNyipL2/i1sGW9Xj/MRX5FxHCLAj4Gu1xaNFpF3mq1+sxncZfkZxkz0EQyEwPHa2IpYaNeXl8TEsrO4CBkprnroFkh25rmFROAobcrpg2XfCc5c6eJtN3KJd86JMkKw/A9gA/JjvVVTnYr16zz5Jn815GsshDXrCVKBLuPG/WlhDv00cG0AAAAAElFTkSuQmCC"
+                        alt="signo de exclamación">
+                        <p>Solo letras minúsculas y sin acentos</p>
+                    </div>
+                    <div class="botones">
+                        <button id="boton1" class="boton">Encriptar</button>
+                        <button id="boton2" class="boton">Desencriptar</button>
+                    </div>
                 </div>
+                
             </div>
             <div class="mensaje-encriptado">
-                <p></p>
+                <img src="img/buscando.png" alt="personjae con una lupa">
+                <h2>Ningún mensaje fue encontrado</h2>
+                <p>Ingresa el texto que desees encriptar o desencriptar</p>
             </div>
         </section>
     </main>
