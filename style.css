@@ -46,9 +46,10 @@ header {
     resize: none;
     height: 295px;
     width: 560px;
+    border: none;
     font-size: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: #e9edf1;
 }
 
 #mensajeIngresado::placeholder {
@@ -120,7 +121,7 @@ header {
     width: 380px;
     border-radius: 25px;
     text-align: center;
-    padding: 10px;
+    padding: 10px 20px;
     box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -134,6 +135,14 @@ header {
     font-size: 25px;
 }
 
-.mensaje-encriptado p {
+.mensaje-indicacion p:first-child {
     margin-top: 30px;
+}
+
+.mensaje-indicacion p:last-child {
+    margin-top: 10px;
+    text-align: left;
+    font-weight: bold;
+    color: #072B61;
+    line-height: 1.3em;
 }
