@@ -1,5 +1,7 @@
 let titulo2 = document.getElementById("titulo2");
 let mensajeInicial = document.getElementById("mensaje-inicial");
+let copiar = document.getElementById("portapapeles");
+let mensajeCopiado = document.querySelector("#mensaje-copiado");
 
 function asignarTextoElemento(elemento, texto) {
   let elementoHTML = document.querySelector(elemento);
@@ -59,7 +61,32 @@ function desencriptar() {
   }
 }
 
+function copiarAlPortapapeles() {
+  let textoFormateado = document.querySelector("#texto-formateado");
+  let textoParaCopiar = textoFormateado.innerText;
+
+  navigator.clipboard.writeText(textoParaCopiar).then(
+    function () {
+      copiar.style.display = "block";
+      mensajeCopiado.innerText = ` ¡Copiado al portapapeles exitosamente!`;
+
+      // Oculta el mensaje después de 2 segundos
+      setTimeout(function () {
+        copiar.style.display = "none";
+        mensajeCopiado.innerText = "";
+      }, 3000);
+    },
+    function (err) {
+      console.error("Error al copiar al portapapeles: ", err);
+    }
+  );
+}
+
+let botonCopiar = document.querySelector("#copiar");
+botonCopiar.addEventListener("click", copiarAlPortapapeles);
+
 function mensajesIniciales() {
+  copiar.style.display = "none";
   let imagen = document.querySelector(".mensaje-encriptado img");
   if (!imagen) {
     let nuevaImagen = document.createElement("img");
@@ -80,6 +107,7 @@ function mensajesIniciales() {
   }
 
   document.getElementById("texto-formateado").innerHTML = "";
+  mensajeCopiado.innerText = "";
 }
 
 mensajesIniciales();
