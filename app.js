@@ -2,10 +2,11 @@ let titulo2 = document.getElementById("titulo2");
 let mensajeInicial = document.getElementById("mensaje-inicial");
 let copiar = document.getElementById("portapapeles");
 let mensajeCopiado = document.querySelector("#mensaje-copiado");
+let mostrarMensaje = document.querySelector(".ocultar");
 
 function asignarTextoElemento(elemento, texto) {
   let elementoHTML = document.querySelector(elemento);
-  elementoHTML.innerHTML = texto;
+  elementoHTML.textContent = texto;
   return;
 }
 
@@ -35,9 +36,8 @@ function encriptar() {
       .replace(/a/g, "ai")
       .replace(/o/g, "ober")
       .replace(/u/g, "ufat");
-    // Reemplaza los caracteres de nueva línea con la etiqueta <br>
-    let textoFormateado = textoEncriptado.replace(/\n/g, "<br>");
-    asignarTextoElemento("#texto-formateado", textoFormateado);
+      mostrarMensaje.style.display = "block";
+    asignarTextoElemento("#texto-formateado", textoEncriptado);
   } else {
     mensajesIniciales();
   }
@@ -53,33 +53,35 @@ function desencriptar() {
       .replace(/ai/g, "a")
       .replace(/ober/g, "o")
       .replace(/ufat/g, "u");
-    // Reemplaza los caracteres de nueva línea con la etiqueta <br>
-    let textoFormateado = textoEncriptado.replace(/\n/g, "<br>");
-    asignarTextoElemento("#texto-formateado", textoFormateado);
+      mostrarMensaje.style.display = "block";
+    asignarTextoElemento("#texto-formateado", textoEncriptado);
   } else {
     mensajesIniciales();
   }
 }
 
 function copiarAlPortapapeles() {
-  let textoFormateado = document.querySelector("#texto-formateado");
-  let textoParaCopiar = textoFormateado.innerText;
+  let textoFormateado = document.getElementById("texto-formateado");
+  let textoParaCopiar = textoFormateado.value;
+  console.log(textoParaCopiar);
 
-  navigator.clipboard.writeText(textoParaCopiar).then(
-    function () {
-      copiar.style.display = "block";
-      mensajeCopiado.innerText = ` ¡Copiado al portapapeles exitosamente!`;
+  if (textoParaCopiar) {
+    navigator.clipboard.writeText(textoParaCopiar).then(
+      function () {
+        copiar.style.display = "block";
+        mensajeCopiado.innerText = ` ¡Copiado al portapapeles exitosamente!`;
 
-      // Oculta el mensaje después de 2 segundos
-      setTimeout(function () {
-        copiar.style.display = "none";
-        mensajeCopiado.innerText = "";
-      }, 3000);
-    },
-    function (err) {
-      console.error("Error al copiar al portapapeles: ", err);
-    }
-  );
+        // Oculta el mensaje después de 2 segundos
+        setTimeout(function () {
+          copiar.style.display = "none";
+          mensajeCopiado.innerText = "";
+        }, 3000);
+      },
+      function (err) {
+        console.error("Error al copiar al portapapeles: ", err);
+      }
+    );
+  }
 }
 
 let botonCopiar = document.querySelector("#copiar");
@@ -97,16 +99,17 @@ function mensajesIniciales() {
 
   if (titulo2) {
     titulo2.style.display = "block";
-    titulo2.innerHTML = "Ningún mensaje fue encontrado";
+    titulo2.innerText = "Ningún mensaje fue encontrado";
   }
 
   if (mensajeInicial) {
     mensajeInicial.style.display = "block";
-    mensajeInicial.innerHTML =
+    mensajeInicial.innerText =
       "Ingresa el texto que desees encriptar o desencriptar";
   }
 
-  document.getElementById("texto-formateado").innerHTML = "";
+  mostrarMensaje.style.display = "none";
+  document.getElementById("texto-formateado").innerText = "";
   mensajeCopiado.innerText = "";
 }
 
