@@ -141,14 +141,6 @@ header {
   margin-top: 30px;
 }
 
-/* .mensaje-indicacion p:last-child {
-    margin-top: 10px;
-    text-align: left;
-    font-weight: bold;
-    color: #072B61;
-    line-height: 1.3em;
-} */
-
 .portapapeless {
   position: absolute;
   bottom: 0;
@@ -167,7 +159,7 @@ header {
 }
 
 .caja-textoFormateado {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -175,7 +167,7 @@ header {
 }
 
 .ocultar {
-    display: none;
+  display: flex;
 }
 
 .caja-textoFormateado textarea {
@@ -189,19 +181,24 @@ header {
   resize: none;
   border: none;
   outline: none;
+  overflow-y: auto;
 }
 
 .caja-textoFormateado button {
-    margin-top: 20px;
+  margin-top: 20px;
   width: 200px;
   height: 50px;
 }
 
-/* @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .principal {
     flex-direction: column;
     padding: 20px;
     height: 90vh;
+  }
+
+  .mensaje-usuario {
+    justify-content: space-evenly;
   }
 
   #mensajeIngresado {
@@ -225,12 +222,72 @@ header {
   }
 
   .mensaje-encriptado {
-    width: 690px;
+    width: 670px;
   }
 
-  
+  .mensaje-indicacion img {
+    display: none;
+  }
 
   .mensaje-indicacion h2 {
     font-weight: bold;
   }
-} */
+
+  .caja-textoFormateado textarea {
+    /* Aquí está el cambio */
+    width: 100%;
+    height: 200px;
+  }
+
+  .caja-textoFormateado button {
+    width: 100%;
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  header,
+  .caja {
+    width: 100%;
+  }
+
+  .logo {
+    margin-left: 15px;
+  }
+
+  .titulo {
+    margin-right: 50px;
+  }
+
+  .principal {
+    height: auto;
+  }
+
+  .mensaje-usuario {
+    height: 500px;
+    justify-content: space-between;
+  }
+
+  .botones {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .boton {
+    width: 100%;
+  }
+
+  #mensajeIngresado {
+    width: 310px;
+    height: 250px;
+  }
+
+  .mensaje-encriptado {
+    width: 310px;
+  }
+
+  .portapapeless p {
+    margin-top: auto;
+  }
+}

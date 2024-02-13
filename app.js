@@ -90,7 +90,7 @@ botonCopiar.addEventListener("click", copiarAlPortapapeles);
 function mensajesIniciales() {
   copiar.style.display = "none";
   let imagen = document.querySelector(".mensaje-encriptado img");
-  if (!imagen) {
+  if (!imagen && window.innerWidth > 768) { // Aquí está el cambio
     let nuevaImagen = document.createElement("img");
     nuevaImagen.src = "img/buscando.png";
     nuevaImagen.alt = "personjae con una lupa";
