@@ -92,7 +92,7 @@ function mensajesIniciales() {
   let imagen = document.querySelector(".mensaje-encriptado img");
   if (!imagen && window.innerWidth > 768) { // Aquí está el cambio
     let nuevaImagen = document.createElement("img");
-    nuevaImagen.src = "img/buscando.png";
+    nuevaImagen.src = "img/Muñeco.png";
     nuevaImagen.alt = "personjae con una lupa";
     document.querySelector(".mensaje-encriptado").prepend(nuevaImagen);
   }
