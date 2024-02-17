@@ -127,7 +127,7 @@ header {
 }
 
 .mensaje-encriptado img {
-  margin-top: 30px;
+  width: 200px;
 }
 
 .mensaje-encriptado h2 {
@@ -190,11 +190,22 @@ header {
   height: 50px;
 }
 
+@media screen and (max-width: 1440px) {
+  #mensajeIngresado {
+    height: 500px;
+  }
+  .mensaje-encriptado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .principal {
     flex-direction: column;
     padding: 20px;
-    height: 90vh;
+    height: auto;
   }
 
   .mensaje-usuario {
@@ -245,7 +256,7 @@ header {
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 400px) {
   header,
   .caja {
     width: 100%;
