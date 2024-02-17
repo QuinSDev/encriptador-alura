@@ -301,6 +301,7 @@ header {
   }
 
   .portapapeless p {
-    margin-top: auto;
+    margin-top: 18px;
+    margin-left: 10px;
   }
 }
